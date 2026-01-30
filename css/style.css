@@ -1,0 +1,844 @@
+/* Tailwind CSS CDN */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+/* Custom color variables */
+:root {
+    --primary-color: #008755;
+    --primary-dark: #005a38;
+    --primary-light: #4db380;
+    --primary-lighter: #E8F0EC;
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-light: #999999;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F7F6;
+    --bg-tertiary: #E8F0EC;
+    --bg-data: #E8F5F0;
+    --bg-capability: #F0F9F5;
+    --bg-timeline: #E3F4EC;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.company-tags {
+    display: flex;
+    gap: 12px;
+}
+
+.company-tag {
+    padding: 8px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    backdrop-filter: blur(5px);
+}
+
+.company-tag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+.company-tag.active {
+    background: white;
+    color: var(--primary-color);
+    border-color: white;
+    font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+    padding-top: 90px;
+    min-height: 100vh;
+}
+
+.company-page {
+    display: none;
+}
+
+.company-page.active {
+    display: block;
+}
+
+.page-placeholder {
+    text-align: center;
+    padding: 100px 20px;
+    color: var(--text-secondary);
+}
+
+.page-placeholder h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: var(--primary-color);
+}
+
+/* Home Page Construction Styles */
+.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.construction-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 60px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+}
+
+.construction-icon {
+    font-size: 80px;
+    margin-bottom: 24px;
+}
+
+.construction-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.construction-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.construction-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.construction-link {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.construction-link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 60px;
+    padding: 0 24px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.module-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* Period Section */
+.period-section {
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.period-cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.period-card {
+    background: linear-gradient(135deg, #fafbfc, #f5f7f6);
+    border-radius: 16px;
+    padding: 16px 12px;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.period-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(135deg, #f5f7f6, #e8f0ec);
+}
+
+.period-card.active {
+    background: linear-gradient(135deg, var(--primary-lighter), var(--primary-light));
+    box-shadow: 0 4px 12px rgba(0, 160, 104, 0.3);
+}
+
+/* 为非active的a.period-card添加伪元素效果 */
+a.period-card:not(.active)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+}
+
+a.period-card:not(.active):hover::before {
+    transform: scaleX(1);
+}
+
+.period-header {
+    margin-bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.period-year {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    padding: 5px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.period-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.period-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.period-keypoints {
+    list-style: none;
+    padding: 0;
+}
+
+.period-keypoints li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.period-keypoints li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Analysis Section */
+.analysis-section {
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.analysis-container {
+    display: grid;
+    grid-template-columns: 0.22fr 1fr;
+    gap: 40px;
+}
+
+.bottom-modules {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.data-analysis-section,
+.capability-section {
+    width: 100%;
+}
+
+/* Dimension Tabs */
+.dimension-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dimension-tab {
+    padding: 16px 20px;
+    background: white;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+}
+
+.dimension-tab:hover {
+    background: var(--primary-lighter);
+    color: var(--primary-color);
+    transform: translateX(8px);
+}
+
+.dimension-tab.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    border-color: var(--primary-color);
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+}
+
+/* Dimension Content */
+.dimension-content-wrapper {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-lg);
+    min-height: 400px;
+}
+
+.dimension-content {
+    animation: fadeIn var(--transition-base);
+}
+
+.dimension-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary-lighter);
+}
+
+.dimension-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 24px 0 12px;
+}
+
+.dimension-content p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.dimension-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dimension-content li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.dimension-content li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Bottom Modules */
+.bottom-modules {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.data-analysis-section,
+.capability-section {
+    width: 100%;
+}
+
+/* Data Analysis Section */
+.data-analysis-section {
+    background: var(--bg-data);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: var(--shadow-lg);
+}
+
+.data-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.data-card {
+    background: linear-gradient(135deg, var(--bg-tertiary), white);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.data-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.data-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.data-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.data-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.data-trend {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.data-trend.up {
+    color: var(--primary-color);
+}
+
+/* Capability Section */
+.capability-section {
+    background: var(--bg-capability);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: var(--shadow-lg);
+}
+
+.capability-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+}
+
+.capability-item {
+    text-align: center;
+    padding: 16px;
+    background: var(--bg-tertiary);
+    border-radius: 12px;
+    transition: all var(--transition-base);
+}
+
+.capability-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--primary-lighter), white);
+}
+
+.capability-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.capability-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.capability-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Timeline Section */
+.timeline-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.timeline-container {
+    background: var(--bg-timeline);
+    border-radius: 12px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+}
+
+.timeline-item {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 12px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.timeline-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.timeline-year {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.timeline-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.timeline-content p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .period-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .analysis-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dimension-tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .dimension-tab {
+        flex: 1;
+        min-width: calc(33.333% - 8px);
+        text-align: center;
+    }
+
+    .timeline-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .bottom-modules {
+        flex-direction: column;
+    }
+
+    .data-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .capability-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 12px 0;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar-title {
+        font-size: 20px;
+    }
+
+    .company-tags {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main-content {
+        padding-top: 140px;
+    }
+
+    .period-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .bottom-modules {
+        flex-direction: column;
+    }
+
+    .data-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .capability-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .construction-container {
+        padding: 40px 20px;
+    }
+
+    .construction-icon {
+        font-size: 60px;
+    }
+
+    .construction-title {
+        font-size: 28px;
+    }
+
+    .construction-subtitle {
+        font-size: 16px;
+    }
+
+    .construction-link {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-tag {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+
+    .data-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dimension-tab {
+        min-width: 100%;
+    }
+
+    .period-hero-title {
+        font-size: 28px;
+    }
+
+    .period-hero-subtitle {
+        font-size: 16px;
+    }
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mt-4 {
+    margin-top: 16px;
+}
+
+.mb-4 {
+    margin-bottom: 16px;
+}
+
+.p-4 {
+    padding: 16px;
+}
+
+/* Period Detail Page Styles */
+.period-detail-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-button-container {
+    margin-bottom: 30px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.back-button:hover {
+    transform: translateX(-4px);
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+}
+
+.period-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--primary-lighter), white);
+    border-radius: 16px;
+    margin-bottom: 60px;
+    box-shadow: var(--shadow-lg);
+}
+
+.period-hero-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.period-hero-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+

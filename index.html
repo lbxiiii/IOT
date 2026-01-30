@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生态链&IoT平台建设历程分析</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-title">生态链&IoT平台建设历程分析</a>
+            <div class="company-tags">
+                <button class="company-tag" onclick="window.location.href='xiaomi.html'">小米生态链及IoT</button>
+                <button class="company-tag" onclick="window.location.href='tuya.html'">涂鸦智能IoT</button>
+                <button class="company-tag" onclick="showHomePage()">华为生态链</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        <!-- 首页内容 -->
+        <div id="home-page" class="home-page">
+            <div class="construction-container">
+                <div class="construction-icon">🚧</div>
+                <h1 class="construction-title">网站建设中</h1>
+                <p class="construction-subtitle">更多精彩内容，敬请期待</p>
+                <div class="construction-links">
+                    <a href="tuya.html" class="construction-link">查看涂鸦智能IoT分析 →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showHomePage() {
+            document.getElementById('home-page').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

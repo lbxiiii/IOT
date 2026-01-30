@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>处理引用标注</title></head>
+<body>
+<script>
+fetch('data/2014-2016-content.js')
+    .then(r => r.text())
+    .then(content => {
+        const newContent = content.replace(/\(\d+\)/g, '');
+        const blob = new Blob([newContent], {type: 'text/plain;charset=utf-8'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = '2014-2016-content.js';
+        a.click();
+        console.log('处理完成');
+    });
+</script>
+</body>
+</html>
